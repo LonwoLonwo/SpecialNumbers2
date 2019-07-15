@@ -99,11 +99,15 @@ public class SpecialNumbers {
             System.out.println("You enter auto sign: " + numbers + characters + region);
             System.out.println("Start searching. Please, wait...");
 
+            Calendar calendar = Calendar.getInstance();
+            //Setting the Calendar date and time to the given date and time
+
             Map<String, List<String>> regionAutoSigns = allAutoSigns.get(region);
             if (regionAutoSigns != null) {
                 List<String> integersForCharacters = regionAutoSigns.get(characters);
                 if (integersForCharacters != null) {
                     if (integersForCharacters.indexOf(numbers) != -1) {
+                        long a = calendar.getTimeInMillis();
                         System.out.println("Number correct.");
                     } else {
                         System.out.println("Numbers not found.");
@@ -121,8 +125,7 @@ public class SpecialNumbers {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной: " + string);
-                    long afterArray = System.currentTimeMillis();
-                    System.out.println("Время поиска ArrayList: " + (afterArray - beforeArray) + "ms");
+                    System.out.println("Время поиска ArrayList: " + (System.currentTimeMillis() - beforeArray) + "ms");
                 }
             }
 
@@ -132,8 +135,7 @@ public class SpecialNumbers {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной2: " + string);
-                    long afterHashSet = System.currentTimeMillis();
-                    System.out.println("Время поиска HashSet: " + (afterHashSet - beforeHashSet) + "ms");
+                    System.out.println("Время поиска HashSet: " + (System.currentTimeMillis()  - beforeHashSet) + "ms");
                 }
             }
             long beforeTreeSet = System.currentTimeMillis();
@@ -142,8 +144,7 @@ public class SpecialNumbers {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной3: " + string);
-                    long afterTreeSet = System.currentTimeMillis();
-                    System.out.println("Время поиска TreeSet: " + (afterTreeSet - beforeTreeSet) + "ms");
+                    System.out.println("Время поиска TreeSet: " + (System.currentTimeMillis()  - beforeTreeSet) + "ms");
                 }
             }
             long beforeSortedArray = System.currentTimeMillis();
@@ -152,8 +153,7 @@ public class SpecialNumbers {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной4: " + string);
-                    long afterSortedArray = System.currentTimeMillis();
-                    System.out.println("Время поиска sorted ArrayList: " + (afterSortedArray - beforeSortedArray) + "ms");
+                    System.out.println("Время поиска sorted ArrayList: " + (System.currentTimeMillis()  - beforeSortedArray) + "ms");
                 }
             }
 
@@ -163,14 +163,12 @@ public class SpecialNumbers {
             if(index >= 0) {
 
                 System.out.println("Этот номер блатной5: " + (numbers + characters + region));
-                long afterBinarySearch = System.currentTimeMillis();
-                System.out.println("Время поиска sorted ArrayList by binary Search: " + (afterBinarySearch - beforeBinarySearch) + "ms");
+                System.out.println("Время поиска sorted ArrayList by binary Search: " + (System.currentTimeMillis()  - beforeBinarySearch) + "ms");
             }
 
             else if(index < -1)
                 {
-                long afterBinarySearch = System.currentTimeMillis();
-                System.out.println("Номер не найден. Время поиска: " + (afterBinarySearch - beforeBinarySearch) + "ms");
+                System.out.println("Номер не блатной. Время поиска: " + (System.currentTimeMillis()  - beforeBinarySearch) + "ms");
             }
 
 
