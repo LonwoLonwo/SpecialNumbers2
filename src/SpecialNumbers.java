@@ -99,7 +99,6 @@ public class SpecialNumbers {
             System.out.println("You enter auto sign: " + numbers + characters + region);
             System.out.println("Start searching. Please, wait...");
 
-            Calendar calendar = Calendar.getInstance();
             //Setting the Calendar date and time to the given date and time
 
             Map<String, List<String>> regionAutoSigns = allAutoSigns.get(region);
@@ -107,7 +106,6 @@ public class SpecialNumbers {
                 List<String> integersForCharacters = regionAutoSigns.get(characters);
                 if (integersForCharacters != null) {
                     if (integersForCharacters.indexOf(numbers) != -1) {
-                        long a = calendar.getTimeInMillis();
                         System.out.println("Number correct.");
                     } else {
                         System.out.println("Numbers not found.");
