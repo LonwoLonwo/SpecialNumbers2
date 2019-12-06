@@ -117,56 +117,56 @@ public class SpecialNumbers {
                 System.out.println("Region not found.");
             }
 
-            long beforeArray = System.currentTimeMillis();
+            long beforeArray = System.nanoTime();
             for(String string : allAutoSpecialSigns)
             {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной: " + string);
-                    System.out.println("Время поиска ArrayList: " + (System.currentTimeMillis() - beforeArray) + "ms");
+                    System.out.println("Время поиска ArrayList: " + (System.nanoTime() - beforeArray) + "ms");
                 }
             }
 
-            long beforeHashSet = System.currentTimeMillis();
+            long beforeHashSet = System.nanoTime();
             for(String string : allAutoSpecialSignsHashSet)
             {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной2: " + string);
-                    System.out.println("Время поиска HashSet: " + (System.currentTimeMillis()  - beforeHashSet) + "ms");
+                    System.out.println("Время поиска HashSet: " + (System.nanoTime()  - beforeHashSet) + "ms");
                 }
             }
-            long beforeTreeSet = System.currentTimeMillis();
+            long beforeTreeSet = System.nanoTime();
             for(String string : allAutoSpecialSignsTreeSet)
             {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной3: " + string);
-                    System.out.println("Время поиска TreeSet: " + (System.currentTimeMillis()  - beforeTreeSet) + "ms");
+                    System.out.println("Время поиска TreeSet: " + (System.nanoTime()  - beforeTreeSet) + "ms");
                 }
             }
-            long beforeSortedArray = System.currentTimeMillis();
+            long beforeSortedArray = System.nanoTime();
             for(String string : allAutoSpecialSignsSortedArrayList)
             {
                 if(string.contains(numbers + characters + region))
                 {
                     System.out.println("Этот номер блатной4: " + string);
-                    System.out.println("Время поиска sorted ArrayList: " + (System.currentTimeMillis()  - beforeSortedArray) + "ms");
+                    System.out.println("Время поиска sorted ArrayList: " + (System.nanoTime()  - beforeSortedArray) + "ms");
                 }
             }
 
-            long beforeBinarySearch = System.currentTimeMillis();
+            long beforeBinarySearch = System.nanoTime();
             int index = Collections.binarySearch(allAutoSpecialSignsSortedArrayList, (numbers + characters + region));
 
             if(index >= 0) {
 
                 System.out.println("Этот номер блатной5: " + (numbers + characters + region));
-                System.out.println("Время поиска sorted ArrayList by binary Search: " + (System.currentTimeMillis()  - beforeBinarySearch) + "ms");
+                System.out.println("Время поиска sorted ArrayList by binary Search: " + (System.nanoTime() - beforeBinarySearch) + "ms");
             }
 
             else if(index < -1)
                 {
-                System.out.println("Номер не блатной. Время поиска: " + (System.currentTimeMillis()  - beforeBinarySearch) + "ms");
+                System.out.println("Номер не блатной. Время поиска: " + (System.nanoTime()  - beforeBinarySearch) + "ms");
             }
 
 
